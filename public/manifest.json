@@ -1,20 +1,22 @@
 {
   "name": "Fira Nacional 26",
-  "short_name": "Fira 26",
+  "short_name": "Fira Brasil",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#f5ebd9",
   "icons": [
     {
-      "src": "public/192@72x.png",
+      "src": "public/192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "public/512@72x.png",
+      "src": "public/512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
