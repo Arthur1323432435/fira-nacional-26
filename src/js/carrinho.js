@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartSubtotalEl = document.getElementById("cartSubtotal");
     const cartCountBadge = document.getElementById("cartCountBadge");
 
-    // =========================================
+    // =========================================ssssss
     // 2. FUNÇÕES DE ABRIR E FECHAR
     // =========================================
     function openCart() {
