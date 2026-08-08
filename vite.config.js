@@ -11,6 +11,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         etapas: resolve(__dirname, 'etapas-estaduais.html'),
+        resultados: resolve(__dirname, 'resultados.html'),
       },
     },
   },
