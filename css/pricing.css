@@ -1,3 +1,4 @@
+
 /* =========================================
    PRICING SECTION
    ========================================= */
@@ -26,19 +27,6 @@
     gap: 12px;
 }
 
-/* Força a visibilidade mesmo se a animação JS falhar */
-.pricing-container,
-.pricing-container.reveal-bottom {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-}
-
 /* Utilizando as diretrizes de texto do DS[cite: 5] */
 .text-black {
     color: var(--color-black);
@@ -54,24 +42,29 @@
 
 .ticket-card {
     background-color: var(--color-black);
+    /* Fundo preto[cite: 5] */
     color: var(--color-white);
     width: 380px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
 
-    /* RECORTE DAS LATERAIS CORRIGIDO */
-    -webkit-mask-image: radial-gradient(circle at 0 72%, transparent 12px, black 13px),
+    /* TÉCNICA DE RECORTE (Holes): Cria os furos transparentes nas laterais */
+    -webkit-mask-image:
+        radial-gradient(circle at 0 72%, transparent 12px, black 13px),
         radial-gradient(circle at 100% 72%, transparent 12px, black 13px);
-    -webkit-mask-size: 100% 100%;
+    -webkit-mask-size: 51% 100%;
     -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left, right;
 
-    mask-image: radial-gradient(circle at 0 72%, transparent 12px, black 13px),
+    mask-image:
+        radial-gradient(circle at 0 72%, transparent 12px, black 13px),
         radial-gradient(circle at 100% 72%, transparent 12px, black 13px);
-    mask-size: 100% 100%;
+    mask-size: 51% 100%;
     mask-repeat: no-repeat;
+    mask-position: left, right;
+
 }
 
 /* Criação da camada de textura (Noise) */
@@ -182,11 +175,11 @@
     flex-shrink: 0;
 }
 
-/* Estilo do Botão */
-.ticket-content .cta-btn,
+/* Botão */
 .ticket-btn {
-    background-color: var(--color-gray, #e0e0e0);
-    color: var(--color-black, #000);
+    background-color: var(--color-gray);
+    /* Botão claro[cite: 5] */
+    color: var(--color-black);
     border: none;
     border-radius: 8px;
     padding: 16px;
@@ -196,9 +189,8 @@
     transition: background-color 0.2s;
 }
 
-.ticket-content .cta-btn:hover,
 .ticket-btn:hover {
-    background-color: var(--color-white, #ffffff);
+    background-color: var(--color-white);
 }
 
 /* --- Rodapé do Ingresso (Barcode) --- */
