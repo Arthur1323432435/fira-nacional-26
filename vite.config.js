@@ -15,7 +15,7 @@ export default defineConfig({
         ligaJuvenil: resolve(__dirname, 'liga_juvenil.html'),
 
         etapasEstaduais: resolve(__dirname, 'etapas-estaduais.html'),
-        etapaNacionail: resolve(__dirname, 'etapas_nacional.html'),
+        etapaNacionail: resolve(__dirname, 'etapa_nacional.html'),
         etapaMundial: resolve(__dirname, 'etapa_mundial.html'),
 
         loja: resolve(__dirname, 'loja.html'),
