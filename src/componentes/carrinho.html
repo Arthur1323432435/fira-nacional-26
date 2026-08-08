@@ -1,0 +1,107 @@
+<!-- Fundo escuro (Overlay) que bloqueia a página ao abrir o carrinho -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- Gaveta do Carrinho (Slide-over Lateral) -->
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de Compras">
+
+    <!-- 1. CABEÇALHO DO CARRINHO -->
+    <div class="cart-header">
+        <div class="cart-title-group">
+            <h3>Seu Carrinho</h3>
+            <span class="cart-count-badge" id="cartCountBadge">2</span>
+        </div>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Fechar Carrinho">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- 2. CORPO / LISTA DE PRODUTOS -->
+    <div class="cart-body" id="cartBody">
+
+        <!-- Mensagem de Carrinho Vazio (Exibida via JS quando não houver produtos) -->
+        <div class="cart-empty-state" id="cartEmptyState" style="display: none;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#aaaaaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <p>Seu carrinho está vazio no momento.</p>
+            <button class="btn-continue-shopping js-cart-close">Explorar Produtos</button>
+        </div>
+
+        <!-- Lista de Itens do Carrinho -->
+        <div class="cart-items-list" id="cartItemsList">
+
+            <!-- Item de Exemplo 1 -->
+            <article class="cart-item" data-id="1">
+                <div class="cart-item-image">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200" alt="A Young Woman in Colorful Jacket">
+                </div>
+                <div class="cart-item-details">
+                    <h4 class="cart-item-title">A Young Woman in Colorful Jacket</h4>
+                    <span class="cart-item-price">R$ 180,00</span>
+                    
+                    <!-- Ações: Quantidade e Lixeira -->
+                    <div class="cart-item-actions">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">-</button>
+                            <span class="qty-value">1</span>
+                            <button type="button" class="qty-btn plus" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                        <button type="button" class="btn-remove-item" aria-label="Remover produto da sacola">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Item de Exemplo 2 -->
+            <article class="cart-item" data-id="2">
+                <div class="cart-item-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200" alt="Young Man in Vibrant Jacket">
+                </div>
+                <div class="cart-item-details">
+                    <h4 class="cart-item-title">Young Man in Vibrant Jacket</h4>
+                    <span class="cart-item-price">R$ 247,00</span>
+                    
+                    <!-- Ações: Quantidade e Lixeira -->
+                    <div class="cart-item-actions">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn minus" aria-label="Diminuir quantidade">-</button>
+                            <span class="qty-value">2</span>
+                            <button type="button" class="qty-btn plus" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                        <button type="button" class="btn-remove-item" aria-label="Remover produto da sacola">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- 3. RODAPÉ FIXO -->
+    <div class="cart-footer">
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong class="cart-subtotal" id="cartSubtotal">R$ 674,00</strong>
+            </div>
+            <p class="shipping-note">Frete e impostos calculados na finalização.</p>
+        </div>
+        
+        <button type="button" class="btn-checkout">Finalizar Compra</button>
+    </div>
+
+</aside>

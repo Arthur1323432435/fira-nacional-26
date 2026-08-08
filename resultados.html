@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapas Estaduais - FIRA Brasil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos Compartilhados -->
+    <link rel="stylesheet" href="./src/css/variables.css">
+    <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/schedule.css">
+    <link rel="stylesheet" href="./src/css/faq.css">
+    <link rel="stylesheet" href="./src/css/hero.css">
+    <link rel="stylesheet" href="css/estaduais/locais_estaduais.css">
+    <link rel="stylesheet" href="css/resultados.css">
+    <link rel="stylesheet" href="./src/css/sponsors.css">
+    <link rel="stylesheet" href="./src/css/footer.css">
+    <link rel="stylesheet" href="src/css/carrinho.css">
+
+    <!-- Estilo Específico desta página (se houver) -->
+    <!-- <link rel="stylesheet" href="./src/css/etapas-estaduais.css"> -->
+</head>
+
+<body>
+
+    <!-- Componente Navbar -->
+    <load src="./src/componentes/navbar.html" />
+
+    <main>
+        <!-- Seção ESTADUAIS -->
+        <section class="estaduais-results-section">
+            <div class="estaduais-container">
+
+                <!-- CARD RESULTADOS ESTADUAIS -->
+                <article class="estaduais-card" id="estaduaisCard">
+
+                    <!-- LADO ESQUERDO: BANNER DA ETAPA -->
+                    <div class="estaduais-banner">
+                        <img src="https://framerusercontent.com/images/4UoxD5jphkYtlrnPz9UQdvwNyOU.jpg"
+                            alt="Etapas Estaduais" class="banner-img">
+                        <div class="banner-overlay"></div>
+                        <h2 class="heading-1">ESTADUAIS</h2>
+                    </div>
+
+                    <!-- LADO DIREITO: INFORMAÇÕES E BOTÕES -->
+                    <div class="estaduais-content">
+
+                        <!-- Cabeçalho do Card (Título + Seletor de Estado) -->
+                        <div class="content-header">
+                            <h3 class="body-1-sb">Resultados Estaduais</h3>
+
+                            <!-- Botão/Select do Estado (Maranhão por padrão) -->
+                            <div class="custom-dropdown" id="stateDropdown">
+                                <!-- Botão Principal -->
+                                <button type="button" class="dropdown-trigger" id="dropdownTrigger"
+                                    aria-expanded="false">
+                                    <span id="selectedStateText">Maranhão</span>
+                                    <svg class="dropdown-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </button>
+
+                                <!-- Menu de Opções -->
+                                <ul class="dropdown-menu" id="dropdownMenu">
+                                    <li class="dropdown-item active" data-value="maranhao">Maranhão</li>
+                                    <li class="dropdown-item" data-value="rio">Rio de Janeiro</li>
+                                    <li class="dropdown-item" data-value="saopaulo">São Paulo</li>
+                                    <li class="dropdown-item" data-value="paraiba">Paraíba</li>
+                                    <li class="dropdown-item" data-value="ceara">Ceará</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- ÁREA DE AÇÃO (Botão 'Resultados' e Anos de Download) -->
+                        <div class="content-action">
+                            <!-- Botão Principal de Expansão -->
+                            <button type="button" class="btn-toggle-results" id="btnToggleResults">
+                                Resultados
+                            </button>
+
+                            <!-- Container dos Anos (Inicia Escondido e expande ao clicar) -->
+                            <div class="years-download-container" id="yearsContainer">
+                                <div class="years-grid" id="yearsGrid">
+                                    <!-- Os botões de download serão renderizados via JS de acordo com o Estado -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção NACIONAIS -->
+        <section class="estaduais-results-section">
+            <div class="estaduais-container">
+
+                <!-- CARD RESULTADOS NACIONAIS -->
+                <article class="estaduais-card" id="nacionaisCard">
+
+                    <!-- LADO ESQUERDO: BANNER DA ETAPA -->
+                    <div class="estaduais-banner">
+                        <img src="https://framerusercontent.com/images/4UoxD5jphkYtlrnPz9UQdvwNyOU.jpg"
+                            alt="Etapas Nacionais" class="banner-img">
+                        <div class="banner-overlay"></div>
+                        <h2 class="heading-1">NACIONAIS</h2>
+                    </div>
+
+                    <!-- LADO DIREITO: INFORMAÇÕES E BOTÕES -->
+                    <div class="estaduais-content">
+
+                        <!-- Cabeçalho do Card (Título + Seletor de Estado) -->
+                        <div class="content-header">
+                            <h3 class="body-1-sb">Resultados Nacionais</h3>
+                        </div>
+
+                        <!-- ÁREA DE AÇÃO (Botão 'Resultados' e Anos de Download) -->
+                        <div class="content-action">
+                            <!-- Botão Principal de Expansão -->
+                            <button type="button" class="btn-toggle-results" id="btnToggleNacionais">
+                                Resultados
+                            </button>
+
+                            <!-- Container dos Anos (Inicia Escondido e expande ao clicar) -->
+                            <div class="years-download-container" id="yearsContainer">
+                                <div class="years-grid" id="yearsGridNacionais">
+                                    <!-- Os botões de download serão renderizados via JS de acordo com o Estado -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Seção MUNDIAIS -->
+        <section class="estaduais-results-section">
+            <div class="estaduais-container">
+
+                <!-- CARD RESULTADOS MUNDIAIS -->
+                <article class="estaduais-card" id="mundiaisCard">
+
+                    <!-- LADO ESQUERDO: BANNER DA ETAPA -->
+                    <div class="estaduais-banner">
+                        <img src="https://framerusercontent.com/images/4UoxD5jphkYtlrnPz9UQdvwNyOU.jpg"
+                            alt="Etapas Mundiais" class="banner-img">
+                        <div class="banner-overlay"></div>
+                        <h2 class="heading-1">MUNDIAIS</h2>
+                    </div>
+
+                    <!-- LADO DIREITO: INFORMAÇÕES E BOTÕES -->
+                    <div class="estaduais-content">
+
+                        <!-- Cabeçalho do Card (Título + Seletor de Estado) -->
+                        <div class="content-header">
+                            <h3 class="body-1-sb">Resultados Mundiais</h3>
+                        </div>
+
+                        <!-- ÁREA DE AÇÃO (Botão 'Resultados' e Anos de Download) -->
+                        <div class="content-action">
+                            <!-- Botão Principal de Expansão -->
+                            <button type="button" class="btn-toggle-results" id="btnToggleMundiais">
+                                Resultados
+                            </button>
+
+                            <!-- Container dos Anos (Inicia Escondido e expande ao clicar) -->
+                            <div class="years-download-container" id="yearsContainer">
+                                <div class="years-grid" id="yearsGridMundiais">
+                                    <!-- Os botões de download serão renderizados via JS de acordo com o Estado -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. CARRINHO LATERAL (Escondido por padrão, abre via clique) -->
+    <load src="./src/componentes/carrinho.html" />
+    <!-- Componente FAQ -->
+    <load src="./src/componentes/faq.html" />
+    <!-- Componente Sponsors -->
+    <load src="./src/componentes/sponsors.html" />
+    <!-- Componente Footer -->
+    <load src="./src/componentes/footer.html" />
+
+    <!-- Scripts Compartilhados -->
+    <script type="module" src="./src/js/header.js"></script>
+    <script type="module" src="./src/js/faq.js"></script>
+    <script type="module" src="src/js/carrinho.js"></script>
+    <script type="module" src="/js/resultados.js"></script>
+</body>
+
+</html>

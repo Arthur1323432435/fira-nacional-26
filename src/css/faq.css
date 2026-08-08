@@ -1,0 +1,109 @@
+
+/* =========================================
+   FAQ SECTION
+   ========================================= */
+.faq-section {
+    background-color: rgb(15, 40, 89);
+    /* Azul escuro do DS[cite: 6] */
+    padding: 100px 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    /* Largura contida para facilitar a leitura das perguntas */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* --- Utilitários de Cor --- */
+.text-white {
+    color: rgb(255, 255, 255);
+}
+
+.text-transparent {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Transparência comum no DS[cite: 6] */
+
+/* --- Cabeçalho Centralizado --- */
+.faq-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* --- Lista Accordion --- */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background-color: rgb(0, 0, 0);
+    /* Preto sólido do DS[cite: 6] */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Feedback visual suave */
+}
+
+
+.faq-icon {
+    color: rgb(255, 255, 255);
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado da resposta oculta (animação de altura) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-inner {
+    padding: 0 30px 25px 30px;
+}
+
+.faq-answer-inner .body-2 {
+    font-family: var(--font-body);
+    /* Inter[cite: 6] */
+    margin: 0;
+    line-height: 1.6em;
+}
+
+/* --- Classes ativas via JavaScript --- */
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* A altura será controlada dinamicamente pelo JS para transição suave, 
+   mas caso falhe, este fallback mostra o conteúdo */
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}

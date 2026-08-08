@@ -1,0 +1,214 @@
+/* Estilos para: schedule.css */
+
+/* =========================================
+   SCHEDULE SECTION
+   ========================================= */
+.schedule-section {
+    background-color: var(--color-brand-blue);
+    /* Fundo Azul[cite: 4] */
+    color: var(--color-white);
+    padding: 5%;
+    width: 100%;
+}
+
+.schedule-container {
+    max-width: 1000px;
+    /* Mantém os cards contidos e proporcionais ao design */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* --- Cabeçalho --- */
+.schedule-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.text-transparency {
+    color: var(--rgba-white-70);
+    /* Opacidade extraída do design system[cite: 4] */
+}
+
+/* --- Lista de Cards --- */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.schedule-card {
+    background-color: var(--color-black);
+    /* Fundo Preto[cite: 4] */
+    border-radius: 24px;
+    display: flex;
+    overflow: hidden;
+    min-height: 350px;
+}
+
+/* Coluna Esquerda: Imagem e Dia */
+.card-image-col {
+    width: 35%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 15px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.card-image-col .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    /* 👇 MUDANÇA AQUI: Gradação pesada de preto */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.85) 0%,
+            /* Escurece muito o topo onde fica o "Day 4" */
+            rgba(0, 0, 0, 0.2) 50%,
+            /* Escurece o meio para dar contraste */
+            rgba(0, 0, 0, 0.90) 100%
+            /* Escurece muito a base onde fica o "Civic Center" */
+        );
+}
+
+.day-title {
+    position: absolute;
+    /* 👇 ALTERADO: Valores positivos trazem o texto para dentro do card */
+    top: 30px;
+    /* Distância do topo do card no desktop */
+    margin: 0;
+    line-height: 1em;
+    /* Remove o espaço invisível acima das letras */
+    z-index: 3;
+    /* Garante que fique acima da imagem e do gradiente escuro */
+}
+
+/* Gradiente Escuro para garantir a leitura do texto sobre a imagem */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.card-image-col>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* Coluna Direita: Cronograma */
+.card-content-col {
+    width: 65%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+}
+
+.schedule-item {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.item-time {
+    width: 60px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Avatares dos Palestrantes */
+.avatars {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.avatars img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* =========================================
+   RESPONSIVIDADE - SCHEDULE (ESTILO FRAMER)
+   ========================================= */
+@media (max-width: 768px) {
+    .schedule-section {
+        padding-top: 25% !important;
+        padding-bottom: 25% !important;
+    }
+
+    .schedule-card {
+        flex-direction: column;
+        /* Mantém o empilhamento vertical do card */
+    }
+
+    .card-image-col {
+        width: 100%;
+        /* 1. 🟥 IMAGEM MENOR: Reduzido de 250px para 160px para dar destaque à parte preta */
+        height: 160px;
+
+        /* 2. 📐 TEXTOS MAIS ALTOS: Reduzimos o padding para colar os textos perto das bordas topo/esquerda */
+        padding: 16px 20px;
+
+        /* 3. 🧲 ALINHAMENTO: Força todos os elementos internos a irem para o topo e colarem juntos */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2px;
+        /* Espaçamento bem curtinho entre o Dia, Data e Local */
+    }
+
+    .day-title {
+        /* 4. 🔮 A MÁGICA: Desativamos o absolute. Agora ele vira um elemento normal da fila, */
+        /* subindo automaticamente para o topo junto com os outros textos da imagem. */
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 0 0 30px 0 !important;
+        /* Margemzinha só na parte de baixo para separar da data */
+        font-size: clamp(35px, 3vw, 30px) !important;
+    }
+
+    .card-content-col {
+        width: 100%;
+        /* 5. ⬛ MAIS ESPAÇO PRETO: Aumentamos o respiro interno para dar mais imponência às informações */
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-item {
+        gap: 16px;
+    }
+
+    .item-time {
+        width: 50px;
+    }
+}

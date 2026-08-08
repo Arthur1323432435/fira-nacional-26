@@ -1,0 +1,403 @@
+/* =========================================
+   ESTILOS - CARDS DE RESULTADOS ESTADUAIS
+   ========================================= */
+
+.estaduais-results-section {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--color-black, #0a0a0a);
+    display: flex;
+    justify-content: center;
+}
+
+.estaduais-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Card Principal */
+.estaduais-card {
+    background-color: #000000;
+    border-radius: 20px;
+    display: flex;
+    /* ❌ REMOVA O overflow: hidden; QUE ESTAVA AQUI */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- BANNER ESQUERDO --- */
+.estaduais-banner {
+    position: relative;
+    width: 260px;
+    min-height: 180px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Garante que a imagem não vaze APENAS na área do banner */
+
+    /* 👇 Adicionamos o arredondamento diretamente no banner para compensar a remoção do card */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+.heading-1 {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+
+/* --- CONTEÚDO DIREITO --- */
+.estaduais-content {
+    flex: 1;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Header (Título e Seletor) */
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.body-1-sb {
+    color: #ffffff;
+}
+
+/* Botão de Seleção de Estado (Pill Button Light) */
+.state-dropdown-wrapper {
+    position: relative;
+}
+
+.state-btn {
+    background-color: #e5e5e5;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.state-btn:hover {
+    background-color: #ffffff;
+}
+
+/* --- ÁREA DOS BOTÕES DE RESULTADO --- */
+.content-action {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-toggle-results {
+    align-self: flex-start;
+    background-color: #e5e5e5;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-toggle-results:hover {
+    background-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Container de Anos Escondido por Padrão */
+.years-download-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando expandido */
+.estaduais-card.expanded .years-download-container {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 8px;
+}
+
+/* Oculta o botão inicial 'Resultados' quando expandido */
+.estaduais-card.expanded .btn-toggle-results {
+    display: none;
+}
+
+/* Grid de Anos (Desktop: Fileira flexível com quebra) */
+.years-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.year-btn {
+    background-color: #e5e5e5;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.year-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+}
+
+/* =========================================
+   DROPDOWN PERSONALIZADO DE ESTADOS
+   ========================================= */
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+}
+
+/* Botão Gatilho (Estilo Pill) */
+.dropdown-trigger {
+    width: 100%;
+    background-color: #e5e5e5;
+    color: #000000;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.dropdown-trigger:hover {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Animação da Setinha */
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.custom-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Menu Suspenso (Lista de Estados) */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 6px;
+    list-style: none;
+    margin: 0;
+    z-index: 50;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+
+    /* 👇 Limita a altura e cria o Scroll vertical */
+    max-height: 220px;
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 👇 (Opcional) Estiliza a barra de rolagem para ficar fina e escura */
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    margin: 4px 0;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.custom-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Itens da Lista */
+.dropdown-item {
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.dropdown-item.active {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVIDADE (PHONE / MOBILE LAYOUT)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .estaduais-card {
+        flex-direction: column;
+        border-radius: 24px;
+    }
+
+    .estaduais-banner {
+        width: 100%;
+        min-height: 160px;
+    }
+
+    .banner-text {
+        font-size: 32px;
+    }
+
+    .estaduais-content {
+        padding: 24px 20px;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .state-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .content-action {
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn-toggle-results {
+        align-self: center;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* Anos empilhados no mobile conforme a imagem Phone - Hover */
+    .years-grid {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .year-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    @media (max-width: 768px) {
+        /* ... (Mantenha as regras anteriores de mobile que já existiam aqui) ... */
+
+        /* Conserta o raio da borda da imagem que moveu para o topo no celular */
+        .estaduais-banner {
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            border-bottom-left-radius: 0;
+        }
+
+        .custom-dropdown {
+            width: 100%;
+        }
+
+        /* 👇 Faz o menu empurrar o conteúdo para baixo no mobile em vez de flutuar */
+        .dropdown-menu {
+            position: relative;
+            top: 0;
+            transform: none;
+            /* Remove a animação de subir/descer para não conflitar */
+
+            /* Esconde o elemento fisicamente para ele não ocupar espaço em branco */
+            display: none;
+        }
+
+        .custom-dropdown.open .dropdown-menu {
+            display: block;
+            /* Revela ocupando espaço */
+            margin-top: 12px;
+            animation: fade-in 0.3s ease;
+        }
+    }
+
+    /* Pequena animação para a abertura no mobile */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

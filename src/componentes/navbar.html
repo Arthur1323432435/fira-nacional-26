@@ -1,0 +1,96 @@
+<header class="navbar-fixed" id="main-navbar">
+
+    <!-- Barra Principal -->
+    <div class="navbar-container">
+
+        <!-- Botão Menu (Hamburger e Close) -->
+        <button class="nav-btn menu-toggle-btn" id="menuToggleBtn">
+            <!-- Ícone Hamburger (padrão) -->
+            <svg class="icon-hamburger" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <!-- Ícone Fechar (X) -->
+            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+
+        <!-- Logo Central -->
+        <div class="nav-logo">
+            <img src="assets/images/Ativo 21@72x.png" alt="FIRA BRASIL" />
+        </div>
+
+        <!-- Ícones da Direita (Busca e Carrinho) -->
+        <div class="nav-actions">
+            <!-- Ícone de Busca -->
+            <button class="nav-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+
+            <!-- Ícone de Carrinho -->
+            <button class="nav-btn js-cart-btn" aria-label="Abrir Carrinho">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Dropdown (Mega Menu Expandido) -->
+    <div class="nav-dropdown">
+        <div class="nav-dropdown-content">
+
+            <!-- Coluna Esquerda: Links de Info -->
+            <div class="nav-info-links">
+                <h3 class="dropdown-title">Info</h3>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/index.html#privileges">Nossa História</a></li>
+                    <li><a href="/index.html#speakers">Nossa Equipe</a></li>
+                    <li><a href="/etapas-estaduais.html">Etapas Estaduais</a></li>
+                    <li><a href="/etapa_nacional.html">Etapa Nacional</a></li>
+                    <li><a href="/etapa_mundial.html">Etapa Mundial</a></li>
+                    <li><a href="/resultados.html">Resultados</a></li>
+                    <!-- Submenu de Modalidades -->
+                    <li class="has-submenu">
+                        <a>
+                            Modalidades
+                            <span class="submenu-arrow">›</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="/liga_kids.html">Kids</a></li>
+                            <li><a href="/liga_juvenil.html">Juvenil</a></li>
+                            <li><a href="/liga_universitaria.html">Universitária</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/loja.html">Loja</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna Direita: Loja / Banner -->
+            <div class="nav-store-promo">
+                <h3 class="dropdown-title">FIRA Nacional 2026</h3>
+                <div class="promo-banner-container">
+                    <img src="assets/images/FINAL-NACIONAL-2026.webp" alt="Nacional 2026" class="promo-img">
+                </div>
+                <a href="/etapa_nacional.html" class="discover-link">Discover all</a>
+            </div>
+
+        </div>
+    </div>
+</header>

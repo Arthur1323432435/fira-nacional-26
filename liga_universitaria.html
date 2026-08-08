@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa Nacional - FIRA Brasil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos Compartilhados -->
+    <link rel="stylesheet" href="./src/css/variables.css">
+    <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/schedule.css">
+    <link rel="stylesheet" href="./src/css/faq.css">
+    <link rel="stylesheet" href="./src/css/hero.css">
+    <link rel="stylesheet" href="css/mundial/locais_mundial.css">
+    <link rel="stylesheet" href="./src/css/sponsors.css">
+    <link rel="stylesheet" href="./src/css/footer.css">
+    <link rel="stylesheet" href="src/css/carrinho.css">
+
+    <!-- Estilo Específico desta página (se houver) -->
+    <!-- <link rel="stylesheet" href="./src/css/etapas-estaduais.css"> -->
+</head>
+
+<body>
+
+    <!-- Componente Navbar -->
+    <load src="./src/componentes/navbar.html" />
+
+    <main>
+        <!-- Seção Schedule -->
+        <section class="schedule-section" id="schedule">
+            <div class="schedule-container">
+
+                <!-- Cabeçalho -->
+                <header class="schedule-header">
+                    <span class="label-text">Liga Universitária</span>
+                    <h2 class="heading-2">provas da liga universitária</h2>
+                    <p class="body-1 text-transparency">Inscreva a sua equipe e conquiste a vitória.</p>
+                </header>
+
+                <!-- Lista de Dias (Cards) -->
+                <div class="schedule-list">
+                    <!-- DAY 1 -->
+                    <article class="schedule-card">
+                        <!-- Coluna Esquerda: Imagem e Data -->
+                        <div class="card-image-col"
+                            style="background-image: url('https://framerusercontent.com/images/qzPHNJfmq9SLF5kB1k1nzuZU.png');">
+                            <div class="image-overlay"></div>
+                            <div class="date-location">
+                                <h4 class="heading-2">CARROS AUTÔNOMOS</h4>
+                            </div>
+                        </div>
+
+                        <!-- Coluna Direita: Cronograma -->
+                        <div class="card-content-col">
+
+                            <div class="schedule-item">
+                                <div class="item-details">
+                                    <p class="body-1-sb text-transparency">Desafio FIRA – Carros Autônomos</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule-item">
+                                <div class="item-details">
+                                    <p class="body-2 text-transparency">O foco da competição FIRA Autonomous Cars é
+                                        incentivar pesquisadores a desenvolver carros autônomos. Na FIRA Autonomous
+                                        Cars, são projetados dois ambientes para que os carros compitam entre si: o
+                                        primeiro é um circuito de corrida e o segundo é um ambiente urbano. Cada
+                                        ambiente possui sua própria pontuação, e a pontuação total dos competidores será
+                                        a soma de ambas.</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule-item">
+                                <div class="item-details">
+                                    <p class="body-1-sb text-transparency">A equipe deve ser composta de 2 a 5 membros.
+                                    </p>
+                                    <div class="avatars button-container">
+                                        <button class="cta-btn body-2-sb" id="ticketBtn">Regras</button>
+                                        <button class="cta-btn body-2-sb" id="ticketBtn">Baixar Arena</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 4. CARRINHO LATERAL (Escondido por padrão, abre via clique) -->
+    <load src="./src/componentes/carrinho.html" />
+    <!-- Componente FAQ -->
+    <load src="./src/componentes/faq.html" />
+    <!-- Componente Sponsors -->
+    <load src="./src/componentes/sponsors.html" />
+    <!-- Componente Footer -->
+    <load src="./src/componentes/footer.html" />
+
+    <!-- Scripts Compartilhados -->
+    <script type="module" src="./src/js/header.js"></script>
+    <script type="module" src="./src/js/faq.js"></script>
+    <script type="module" src="src/js/carrinho.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+
+/* Configuração da Seção de Estatísticas */
+.stats-section {
+    /* Cor de fundo baseada no azul da sua imagem */
+    background-color: #2790d5;
+    color: #ffffff;
+    padding: 170px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Bloco do Título Principal */
+.mission-statement {
+    max-width: 1500px;
+    /* Limita a largura para forçar a quebra de linha igual à imagem */
+    margin-bottom: 80px;
+}
+
+.mission-statement h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(3.13rem, 4.5vw, 6rem);
+    /* Tamanho responsivo */
+    line-height: 1.2em;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.text-highlight {
+    color: #ffffff;
+    /* Branco total para destaque */
+}
+
+
+/* Procure esta classe no seu style.css e altere a linha do transition */
+.text-faded .word {
+    color: rgba(255, 255, 255, 0.2);
+    transition: color 0.15s ease-out;
+    /* Deixa o brilho rápido e responsivo */
+}
+
+/* Grade de Estatísticas */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Permite quebrar linha no celular */
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+    /* Garante que não fiquem espremidos */
+}
+
+.stat-number-wrapper {
+    display: flex;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    /* Tamanho responsivo */
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    /* Deixa o texto da legenda levemente mais suave */
+}
+
+/* Responsividade extra para telas muito pequenas */
+@media (max-width: 600px) {
+    .stats-section {
+        padding: 60px 20px;
+    }
+
+    .mission-statement {
+        margin-bottom: 50px;
+    }
+
+    .stats-grid {
+        gap: 30px;
+    }
+}

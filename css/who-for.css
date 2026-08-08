@@ -1,0 +1,171 @@
+
+/* =========================================
+   WHO FOR SECTION
+   ========================================= */
+.who-for-section {
+    position: relative;
+    width: 100%;
+    min-height: 10vh;
+    background-color: var(--color-brand-orange);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Background Image Layer */
+.who-for-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    /* Foca na parte superior/média da imagem */
+    /* Aumente ou diminua os pixels para ajustar a intensidade */
+
+    /* Dica extra: O blur costuma criar bordas brancas esfumaçadas. 
+       Para esconder isso, aumente levemente a escala da imagem: */
+    transform: scale(1.05);
+    filter: blur(3px);
+    z-index: 1;
+}
+
+/* Gradiente Escuro para legibilidade da base */
+.who-for-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgb(0, 0, 0) 15%, rgba(15, 40, 89, 0) 100%);
+    z-index: 2;
+}
+
+.who-for-container {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 80px 5%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* --- Cabeçalho (Topo) --- */
+.who-for-header {
+    text-align: center;
+    margin-bottom: auto;
+    /* Empurra o grid para baixo */
+    padding-bottom: 50vh;
+    /* Espaço para a ilustração brilhar no centro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+/* --- Grid de Audiência (Base) --- */
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: start;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+}
+
+.audience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.audience-item .icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+/* Transparências aplicadas conforme diretrizes */
+.text-transparency {
+    color: var(--rgba-white-80);
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 992px) {
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas no Tablet */
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* 1. Ajustes da Seção Principal */
+    .who-for-section {
+        min-height: auto;
+        /* Fundo preto para combinar com o gradiente e a base da imagem */
+        background-color: #000000;
+        padding-top: 10px;
+    }
+
+    /* 2. Ajuste do Fundo (Imagem) */
+    .who-for-bg {
+        /* 100% de largura, altura automática. Perfeito para manter a proporção no topo */
+        background-size: 310% auto;
+        background-position: top center;
+        background-repeat: no-repeat;
+        /* Remove o zoom de 1.05 original do desktop */
+        transform: scale(1);
+        filter: brightness(80%) blur(2px);
+        /* Escurece a imagem para melhor contraste com o texto */
+    }
+
+    /* 👇 NOVO: Transição suave entre a imagem e o fundo preto 👇 */
+    .who-for-gradient {
+        /* Aumentamos a altura para 100% para que o gradiente tenha mais espaço para atuar */
+        height: 90%;
+
+        /* 👇 O SEGREDO ESTÁ AQUI 👇 */
+        /* Mudamos de 30% para 55%. Isso significa que mais da metade da tela 
+           (de baixo para cima) será PRETO SÓLIDO, "engolindo" a borda da imagem. */
+        background: linear-gradient(to top, #000000 55%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    /* 3. A "Janela" para a ilustração */
+    .who-for-header {
+        /* Aumentamos bastante este valor para empurrar os textos para baixo 
+           e deixar as pessoas da imagem visíveis no meio da tela */
+        padding-bottom: 400px;
+        /* Ajuste este valor se precisar mostrar mais ou menos da imagem */
+    }
+
+    /* 4. Lista de Itens (Stack Vertical) */
+    .audience-grid {
+        /* 1 coluna no Mobile */
+        grid-template-columns: 1fr;
+        gap: 32px;
+        /* Espaço entre cada bloco de texto/ícone */
+
+        /* Removemos bordas e margens extras que possam atrapalhar o visual limpo */
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+
+    /* Garante que o texto fique alinhado à esquerda como no design */
+    .audience-item {
+        align-items: flex-start;
+        text-align: left;
+    }
+}

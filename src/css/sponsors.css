@@ -1,0 +1,94 @@
+/* Estilos para: sponsors.css */
+
+/* =========================================
+   SPONSORS SECTION
+   ========================================= */
+.sponsors-section {
+    background-color: rgb(0, 0, 0);
+    /* Preto sólido do DS[cite: 6] */
+    padding: 110px 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sponsors-container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    /* Espaçamento generoso entre o título e os logos */
+}
+
+/* --- Título Principal --- */
+.sponsors-container .heading-2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/* --- Grid de Logos --- */
+.sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 60px;
+    /* 40px vertical, 60px horizontal */
+    width: 100%;
+}
+
+/* --- Estilo Base para os Logos (Placeholders) --- */
+.sponsor-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    /* Altura padronizada para manter o alinhamento */
+    opacity: 0.7;
+    /* Transparência para dar aspecto de logo secundário[cite: 6] */
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    /* Tipografia de fallback para os placeholders em texto */
+    font-family: var(--font-body, 'Inter', sans-serif);
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+/* Efeito de hover nos logos */
+.sponsor-logo:hover {
+    opacity: 1;
+}
+
+/* Quando você inserir as imagens reais, este estilo garante que elas fiquem contidas */
+.sponsor-logo img{
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+    fill: currentColor;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    .sponsors-grid {
+        gap: 30px 40px;
+    }
+
+    .sponsor-logo {
+        height: 30px;
+        /* Reduz um pouco a altura no mobile */
+        font-size: 16px;
+        /* Ajuste do texto do placeholder */
+    }
+
+    .sponsors-section {
+        padding: 50px 5%;
+    }
+
+}

@@ -1,0 +1,82 @@
+/* Estilos para: variables.css */
+/* ========================================================
+   VARIABLES.CSS - DESIGN SYSTEM FIRA NACIONAL '26
+   ======================================================== */
+
+:root {
+  /* ------------------------------------------------------
+     1. CORES SÓLIDAS
+     ------------------------------------------------------ */
+  --color-black: rgb(0, 0, 0);
+  --color-blue: rgb(24, 143, 217);
+  --color-gray-light: rgb(229, 228, 229);
+  --color-orange: rgb(242, 172, 41);
+  --color-blue-dark: rgb(15, 40, 89);
+  --color-red: rgb(242, 12, 12);
+  --color-yellow: rgba(255, 202, 24, 1);
+
+  /* ------------------------------------------------------
+     2. TRANSPARÊNCIAS (White)[cite: 2]
+     ------------------------------------------------------ */
+  --color-white-05: rgba(255, 255, 255, 0.05);
+  --color-white-10: rgba(255, 255, 255, 0.10);
+  --color-white-20: rgba(255, 255, 255, 0.20);
+  --color-white-50: rgba(255, 255, 255, 0.50);
+  --color-white-60: rgba(255, 255, 255, 0.60);
+  --color-white-70: rgba(255, 255, 255, 0.70);
+  --color-white-80: rgba(255, 255, 255, 0.80);
+
+  /* ------------------------------------------------------
+     3. FAMÍLIAS TIPOGRÁFICAS[cite: 2]
+     ------------------------------------------------------ */
+  /* Usada para corpo, labels e subtítulos. Família utilitária. */
+  --font-body: 'Inter', sans-serif; 
+  /* Headings principais. Condensada, pesada, impacto de evento. */
+  --font-display: 'Anton', sans-serif; 
+  /* Chamadas pontuais e números/etapas. */
+  --font-display-alt: 'Inter Display', sans-serif; 
+  /* Strong supporting title. */
+  --font-supporting: 'Plus Jakarta Sans', sans-serif; 
+  /* Valores técnicos, metadados e números. */
+  --font-mono: 'IBM Plex Mono', monospace; 
+
+  /* ------------------------------------------------------
+     4. PESOS DE FONTE (Font Weights)[cite: 2]
+     ------------------------------------------------------ */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ------------------------------------------------------
+     5. ALTURA DE LINHA (Line Heights)[cite: 2]
+     ------------------------------------------------------ */
+  --lh-tight: 1em;      /* Usado em H6 e Body 3 */
+  --lh-heading: 1.2em;  /* Usado em H1, H2 e H5 */
+  --lh-subheading: 1.3em; /* Usado em H3 e Labels */
+  --lh-card: 1.4em;     /* Usado em Body 2 (SB) */
+  --lh-body: 1.5em;     /* Usado em P / Body, H4 */
+
+  /* ------------------------------------------------------
+     6. ESPAÇAMENTO ENTRE LETRAS (Letter Spacing)[cite: 2]
+     ------------------------------------------------------ */
+  --ls-tightest: -0.04em; /* Usado em Body 3 */
+  --ls-tight: -0.02em;    /* Padrão para corpo de texto */
+  --ls-normal: 0em;       /* Padrão para Anton/Headings */
+  --ls-loose: 0.05em;     /* Usado em Labels/Nav */
+
+  /* ------------------------------------------------------
+     7. TAMANHOS DE FONTE - DESKTOP (Base)[cite: 2]
+     ------------------------------------------------------ */
+  --fs-h1: 60px;
+  --fs-h2: 50px;
+  --fs-h3: 30px;
+  --fs-h4: 25px;
+  --fs-h5: 22px;
+  --fs-h6: 14px;
+  
+  --fs-body-1: 18px; /* Parágrafo principal */
+  --fs-body-2: 16px; /* Texto padrão / secundário */
+  --fs-body-3: 14px; /* Pequeno destaque */
+  --fs-label: 14px;  /* Nav e Botões */
+}

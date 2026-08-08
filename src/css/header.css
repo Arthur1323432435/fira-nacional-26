@@ -1,0 +1,305 @@
+/* Estilos para: header.css */
+/* =========================================
+   NAVBAR FIXA (HEADER)
+   ========================================= */
+
+/* Impede que o topo do site fique escondido atrás da navbar */
+body {
+    margin: 0;
+    padding-top: 80px;
+    /* Ajuste se a navbar ficar mais alta */
+}
+
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Sombra suave para separar do conteúdo */
+    font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+/* Botões da Navbar (Sem fundo, apenas o ícone) */
+.nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: opacity 0.2s;
+}
+
+.nav-btn:hover {
+    opacity: 0.7;
+}
+
+/* Logo */
+.nav-logo img {
+    height: 70px;
+    /* Ajuste a altura da sua logo aqui */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Ações da Direita (Ícones alinhados) */
+.nav-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Controle de exibição dos ícones Menu e Close */
+.icon-close {
+    display: none;
+}
+
+.navbar-fixed.expanded .icon-hamburger {
+    display: none;
+}
+
+.navbar-fixed.expanded .icon-close {
+    display: block;
+}
+
+/* =========================================
+   DROPDOWN MENU (MEGA MENU)
+   ========================================= */
+
+.nav-dropdown {
+    background-color: #ffffff;
+    border-top: 1px solid #eeeeee;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    padding: 0 20px;
+}
+
+/* Quando expandido, mostra o menu */
+.navbar-fixed.expanded .nav-dropdown {
+    max-height: 600px;
+    /* Valor alto o suficiente para acomodar o conteúdo */
+}
+
+.nav-dropdown-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dropdown-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Coluna de Links Info */
+.nav-info-links {
+    flex: 1;
+}
+
+.nav-info-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.nav-info-links a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.nav-info-links a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* Coluna da Loja/Banner */
+.nav-store-promo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.promo-banner-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 12px;
+}
+
+.promo-img {
+    width: 70%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.discover-link {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.discover-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   SUBMENU EXPANSÍVEL (ABAIXO DO ITEM)
+   ========================================= */
+
+/* 1. Junta a seta bem pertinho da palavra "Modalidades" */
+.nav-info-links .has-submenu>a {
+    display: inline-flex;
+    /* O link ocupa apenas o tamanho do texto */
+    align-items: center;
+    gap: 6px;
+    /* Distância pequena entre o texto e a seta */
+}
+
+.submenu-arrow {
+    font-size: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    /* Animação suave para girar a seta */
+}
+
+/* 2. Submenu Posicionado EMBAIXO do item (em fluxo normal) */
+.nav-info-links .submenu {
+    display: none;
+    /* Escondido por padrão */
+    position: static;
+    /* Tira a posição flutuante/absoluta */
+    list-style: none;
+    padding-left: 16px;
+    /* Recuo para a esquerda para indicar hierarquia */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-info-links .submenu a {
+    font-size: 13px;
+    /* Fonte levemente menor para os subitens */
+    color: #666666;
+}
+
+.nav-info-links .submenu a:hover {
+    color: #000000;
+}
+
+/* 3. HOVER: Exibe o submenu e gira a seta apontando para baixo */
+.nav-info-links ul li.has-submenu:hover .submenu {
+    display: flex;
+    /* Mostra os subitens e empurra o conteúdo de baixo */
+}
+
+.nav-info-links ul li.has-submenu:hover .submenu-arrow {
+    transform: rotate(90deg);
+    /* Gira a setinha (› vira ˅) ao passar o mouse */
+}
+
+/* 4. GARANTE QUE NADA FIQUE OCULTO (Aumenta a altura máxima do menu) */
+.navbar-fixed.expanded .nav-dropdown {
+    max-height: 1000px !important;
+    /* Permite que a navbar expanda o quanto precisar */
+}
+
+/* Permite abrir o submenu via clique/toque no celular e tablet */
+.nav-info-links ul li.has-submenu.open .submenu {
+    display: flex !important;
+}
+
+.nav-info-links ul li.has-submenu.open .submenu-arrow {
+    transform: rotate(90deg);
+}
+
+/* =========================================
+   1. MODO DESKTOP (Apenas Dispositivos com Mouse)
+   ========================================= */
+@media (hover: hover) and (min-width: 769px) {
+
+    /* Passou o mouse: abre o submenu */
+    .nav-info-links ul li.has-submenu:hover>.submenu {
+        display: flex !important;
+    }
+
+    /* Passou o mouse: gira a seta */
+    .nav-info-links ul li.has-submenu:hover>a .submenu-arrow {
+        transform: rotate(90deg);
+    }
+}
+
+/* Responsividade Básica */
+@media (hover: none),
+(max-width: 768px) {
+    /* Tocou no item: abre via classe .open adicionada pelo JS */
+
+    .promo-banner-container {
+        max-width: 200px;
+    }
+
+    .nav-info-links ul li.has-submenu.open>.submenu {
+        display: flex !important;
+    }
+
+    /* Tocou no item: gira a seta */
+    .nav-info-links ul li.has-submenu.open>a .submenu-arrow {
+        transform: rotate(90deg);
+    }
+
+    /* No celular, em vez de abrir para o lado, empilha os subitens abaixo */
+    .nav-info-links .submenu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding: 8px 0 0 16px;
+        background: transparent;
+    }
+
+    .navbar-container {
+        padding: 15px 20px;
+    }
+
+    .nav-dropdown-content {
+        flex-direction: column;
+        gap: 40px;
+        padding: 30px 20px;
+    }
+
+    .nav-store-promo {
+        flex: 1;
+    }
+
+    .promo-img {
+        width: 70%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+    }
+}

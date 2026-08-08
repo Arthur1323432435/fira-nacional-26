@@ -1,0 +1,213 @@
+/* Estilos para: global.css */
+/* ========================================================
+   1. DESIGN SYSTEM - VARIÁVEIS GLOBAIS (:root)
+   (Consolidação de todos os :root espalhados pelo seu código)
+   ======================================================== */
+:root {
+    /* Tipografia */
+    --font-display: 'Anton', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    /* Cores Sólidas */
+    --color-black: rgb(0, 0, 0);
+    --color-dark: #000000; /* Igual ao black, mantido por compatibilidade */
+    --color-white: #ffffff;
+    --color-gray: rgb(229, 228, 229);
+    --color-brand-orange: #F2AC29; /* rgb(242, 172, 41) */
+    --color-brand-blue: rgb(24, 143, 217);
+    --color-dark-blue: rgb(15, 40, 89);
+    --color-yellow: rgba(255, 202, 24, 1);
+    --color-red: rgb(242, 12, 12);
+
+    /* Transparências */
+    --rgba-white-50: rgba(255, 255, 255, 0.5);
+    --rgba-white-70: rgba(255, 255, 255, 0.7);
+    --rgba-white-80: rgba(255, 255, 255, 0.8);
+
+    /* Scrollbar Vars */
+    --scrollbar-dynamic-color: var(--color-brand-orange); 
+    --scroll-bg-color: var(--color-white);
+}
+
+/* ========================================================
+   2. RESET BÁSICO E CONFIGURAÇÕES GERAIS DE BODY
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Considere mudar para var(--font-body) para manter o padrão Inter, se preferir */
+    background-color: #0b1a2e; /* Cor de fallback base */
+}
+
+/* ========================================================
+   3. CURSORES PERSONALIZADOS
+   ======================================================== */
+html,
+body {
+    /* 30 20 define o clique exatamente no centro do cursor */
+    cursor: url('/assets/logos/Variant\ 1.png') 30 20, auto !important;
+
+    scroll-behavior: smooth;
+}
+
+a,
+button,
+.cta-btn,
+.faq-question,
+.stat-number-wrapper {
+    cursor: url('logo/Variant\ 1.png') 30 20, pointer !important;
+}
+
+.cta-btn {
+    background-color: rgba(240, 240, 240, 0.95);
+    color: #111;
+    border: none;
+    padding: 16px 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    border-radius: 10px;
+    /* Formato de pílula */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ========================================================
+   4. ESTILIZAÇÃO DA BARRA DE ROLAGEM (SCROLLBAR)
+   ======================================================== */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-dynamic-color);
+  border-radius: 20px;
+  border: 4px solid var(--color-gray); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-dark); 
+}
+
+/* ========================================================
+   5. ANIMAÇÕES GLOBAIS DE SCROLL (REVEAL)
+   ======================================================== */
+/* Estado 1: Como a seção fica antes de aparecer na tela */
+.reveal-bottom {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Estado 2: A classe que o JavaScript vai adicionar quando rolar a tela */
+.reveal-bottom.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================================
+   6. CLASSES UTILITÁRIAS DO DESIGN SYSTEM 
+   (Classes que se repetem em várias seções)
+   ======================================================== */
+/* Cores Globais */
+.text-white { color: var(--color-white); }
+.text-black { color: var(--color-black); }
+.text-transparent, .text-transparency { color: var(--rgba-white-70); }
+
+/* Tipografia - Overlines e Labels */
+.label-text, .overline {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1.3em;
+    letter-spacing: 0.05em;
+}
+
+/* Tipografia - Títulos (Headings) */
+.heading-1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.1em;
+    text-transform: uppercase;
+}
+
+.heading-2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(50px, 4vw, 50px);
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.heading-3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(25px, 2vw, 40px);
+    line-height: 1.3em;
+    text-transform: uppercase;
+}
+
+.heading-4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(20px, 3.5vw, 2rem);
+    text-transform: uppercase;
+}
+
+.heading-5 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(22px, 1.5vw, 22px);
+    line-height: 1.2em;
+}
+
+/* Tipografia - Textos de Corpo (Body) */
+.body-1 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(18px, 2vw, 18px);
+    line-height: 1.5em;
+    letter-spacing: -0.02em;
+}
+
+.body-1-sb {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(20px, 2vw, 18px) !important;
+    line-height: 1.5em;
+    letter-spacing: -0.02em;
+}
+
+.body-2 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: -0.02em;
+}
+
+.body-2-sb {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4em;
+    letter-spacing: -0.02em;
+}
+
+.body-3 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5em;
+}

@@ -1,0 +1,181 @@
+
+/* =========================================
+   PRIVILEGE SECTION
+   ========================================= */
+.privilege-section {
+    background-color: rgb(0, 0, 0);
+    padding: 120px 5%;
+    width: 100%;
+    /* 👇 ALTERADO: 'clip' esconde o texto vazado sem quebrar o rastreamento do scroll e do sticky */
+    overflow-x: clip;
+}
+
+.privilege-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    /* Layout em Grid: Coluna Esquerda | Linha | Coluna Direita */
+    display: grid;
+    grid-template-columns: 1fr 3px 1.4fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* --- Utilitários de Cor de Texto baseados no DS --- */
+.text-white {
+    color: rgb(255, 255, 255);
+}
+
+.text-transparent {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Transparência 70%[cite: 4] */
+
+/* --- Coluna Esquerda --- */
+.privilege-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    /* Mantém o título fixo na tela enquanto o usuário rola a lista da direita */
+    position: sticky;
+    top: 120px;
+}
+
+.eyebrow-text {
+    color: rgba(255, 255, 255, 0.8);
+    /* Leve transparência */
+    letter-spacing: 0.05em;
+    /* Espaçamento de nav/label[cite: 4] */
+}
+
+/* --- Linha Divisória --- */
+.privilege-divider {
+    width: 100%;
+    /* 👇 ADICIONADO: Força a linha a esticar e acompanhar a altura total da lista da direita */
+    align-self: stretch;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Coluna Direita (Lista) --- */
+.privilege-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* Espaçamento generoso entre os itens */
+}
+
+.privilege-item {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+
+    animation: aparecerDaDireita linear both;
+    animation-timeline: view();
+    /* 👇 AJUSTADO: Garante que o gatilho funcione perfeitamente em qualquer altura de tela */
+    animation-range: entry 10% contain 40%;
+}
+
+/* 3. Crie os Keyframes da animação no seu arquivo (pode ser no final do escopo principal) */
+@keyframes aparecerDaDireita {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+        /* Começa 50px deslocado para a direita */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        /* Termina no lugar correto dele */
+    }
+}
+
+.privilege-icon {
+    color: rgb(255, 255, 255);
+    flex-shrink: 0;
+    margin-top: 2px;
+    /* Alinhamento óptico com a base do H4 */
+}
+
+/* Esta é a linha acesa que vai crescer com o scroll */
+.privilege-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 80%, transparent 100%);
+
+    transform-origin: top;
+    animation: preencherLinha linear both;
+    animation-timeline: view();
+    /* 👇 AJUSTADO: Um intervalo mais seguro para a linha crescer do início ao fim da seção */
+    animation-range: cover 0% cover 80%;
+}
+
+/* Animação que altera a escala vertical de 0 a 1 */
+@keyframes preencherLinha {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile e Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .privilege-container {
+        /* Quebra o grid em uma única coluna vertical */
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .privilege-left {
+        position: static;
+        /* Remove o sticky no mobile */
+    }
+
+    .privilege-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+    }
+
+    .privilege-divider::after {
+        display: none !important;
+    }
+
+    .privilege-list {
+        gap: 35px;
+    }
+
+    .privilege-item {
+        /* No mobile, reduzimos o deslocamento para 20px para ficar mais suave */
+        animation-range: entry 0% contain 25%;
+        /* Faz aparecer um pouquinho mais rápido */
+    }
+
+    @keyframes aparecerDaDireita {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+            /* Movimento mais curto para telas menores */
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

@@ -1,0 +1,145 @@
+
+/* =========================================
+   HIGHLIGHT SECTION
+   ========================================= */
+.highlight-section {
+    /* Gradiente radial: formato circular, começa no centro com amarelo e vai para o laranja nas bordas */
+    background: hsla(0, 0%, 93%, 1);
+
+    background: radial-gradient(circle, hsla(0, 0%, 93%, 1) 0%, hsla(28, 89%, 53%, 1) 53%);
+
+    background: -moz-radial-gradient(circle, hsla(0, 0%, 93%, 1) 0%, hsla(28, 89%, 53%, 1) 53%);
+
+    background: -webkit-radial-gradient(circle, hsla(0, 0%, 93%, 1) 0%, hsla(28, 89%, 53%, 1) 53%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#EEEEEE", endColorstr="#F2811D", GradientType=1);
+
+    padding: 100px 5%;
+    color: var(--color-white);
+}
+
+.highlight-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Cabeçalho --- */
+.highlight-header {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Label / Overline */
+.highlight-header .overline {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--rgba-white-80);
+}
+
+/* Subtítulo */
+.highlight-header .subtitle {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--rgba-white-80);
+}
+
+/* --- Grid de Cards --- */
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Card Base */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+/* --- Card 1 (Destaque) --- */
+.featured-card {
+    position: relative;
+}
+
+.featured-card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.featured-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 2;
+}
+
+.featured-content {
+    position: relative;
+    z-index: 3;
+    padding: 24px;
+    margin-top: auto;
+    /* Empurra o conteúdo para baixo */
+}
+
+/* --- Cards Padrão (2, 3 e 4) --- */
+.standard-card .card-img {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.standard-card .card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 1024px) {
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas no Tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .highlight-grid {
+        grid-template-columns: 1fr;
+        /* 1 coluna no Mobile */
+    }
+
+    .card {
+        min-height: 400px;
+    }
+
+    .featured-card {
+        min-height: 400px;
+    }
+}

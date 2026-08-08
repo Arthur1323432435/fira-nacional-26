@@ -1,0 +1,298 @@
+/* Estilos para: footer.css */
+
+/* =========================================
+   FOOTER SECTION - BACKGROUND & OVERLAY
+   ========================================= */
+.footer-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+
+    /* AQUI ESTÁ A MÁGICA: Gradiente + Imagem na mesma linha */
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.10) 100%),
+        url('/assets/images/oPKkR9QsDfdiv2Yb8TLUMcVFCAw.png_2K_202608031736.webp') center/cover no-repeat !important;
+
+    /* Garante que o texto fique legível por cima do fundo escuro */
+    color: #ffffff;
+}
+
+.footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 5% 40px 5%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- Utilitários de Texto baseados no DS[cite: 6] --- */
+.text-white {
+    color: rgb(255, 255, 255);
+}
+
+.text-transparent {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Transparência 70% */
+
+/* --- Conteúdo Principal --- */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+    /* Empurra o conteúdo um pouco para baixo */
+}
+
+.footer-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.footer-cta .heading-1 {
+    margin: 0;
+}
+
+/* Botão Get Tickets */
+.btn-primary {
+    display: inline-block;
+    /* alinhar botão no centro */
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Informações de Data e Hora --- */
+.footer-date-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.date-text {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.date-text .body-1-sb {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 600;
+    font-size: 18px;
+    /* Body 1 do DS[cite: 6] */
+    margin: 0;
+}
+
+.date-text .time-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+/* --- Badge de Calendário --- */
+.calendar-badge {
+    width: 65px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.calendar-top {
+    background-color: rgb(242, 12, 12);
+    /* Vermelho sólido do DS[cite: 6] */
+    color: rgb(255, 255, 255);
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.calendar-bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 8px 0;
+    color: rgb(0, 0, 0);
+    /* Texto preto[cite: 6] */
+}
+
+.calendar-day {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1em;
+}
+
+.calendar-weekday {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 500;
+    font-size: 10px;
+    color: rgb(100, 100, 100);
+}
+
+/* --- Rodapé (Meta Dados) --- */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 60px;
+}
+
+.footer-bottom .body-3 {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-title {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.info-desc {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Política de Venda --- */
+.footer-policy-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    gap: 16px;
+}
+
+.policy-title {
+    color: #ffffff;
+    margin: 0;
+}
+
+.policy-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.policy-btn {
+    background-color: #e5e5e5;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 280px;
+}
+
+.policy-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile e Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .footer-info-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .policy-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .policy-btn {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .footer-section {
+        /* 1. Centraliza todo o conteúdo (Textos e Botões) */
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        /* Dá um respiro no topo para o título não grudar */
+
+        /* 2. Ajusta a imagem e o fundo */
+        /* Trocamos 'center/cover' por 'top center / 100% auto' */
+        /* Também adicionei um fundo preto no final para garantir que não fique em branco abaixo da imagem */
+        background:
+            linear-gradient(to bottom, rgba(0, 0, 0, none) 0%, #000000 100%),
+            url('images/footer_image.webp') top center / 250% auto no-repeat !important;
+
+        background-color: #000000 !important;
+    }
+
+    .footer-cta {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .footer-date-info {
+        flex-direction: row-reverse;
+        /* Inverte badge e texto no mobile para leitura E->D */
+        align-items: center;
+    }
+
+    .date-text {
+        text-align: right;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+}

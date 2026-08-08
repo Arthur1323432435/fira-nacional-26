@@ -1,0 +1,119 @@
+/* Estilos para: about.css */
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    padding: 300px 5%;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+
+    /* Mantém sua imagem de fundo original */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%),
+        url('/assets/images/FUNDO\ 02\ FIRA\ ADD.webp') no-repeat center center;
+    background-size: cover;
+}
+
+/* Modificado: Camada de overlay agora escurece E aplica o blur no fundo */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    /* Mantém o escurecimento */
+
+    /* ADICIONADO: Aplica o desfoque apenas no que está atrás desta camada */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(8px);
+    /* Garante suporte no navegador Safari */
+
+    z-index: 1;
+}
+
+/* IMPORTANTE: Garanta que o conteúdo de texto fique acima do blur */
+.about-section>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+.about-container {
+    position: relative;
+    z-index: 2;
+    /* Garante que o texto fique acima do overlay */
+    max-width: 1700px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Divide em duas colunas iguais */
+    gap: 100px;
+    align-items: start;
+}
+
+/* Estilos da Coluna Esquerda */
+.about-left .overline {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.about-left .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 7rem);
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Estilos da Coluna Direita */
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 30px;
+    /* Alinha visualmente com o título ao lado */
+}
+
+.about-right p {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE (Mobile)
+   ========================================= */
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        /* Empilha as colunas */
+        gap: 40px;
+    }
+
+    .about-right {
+        padding-top: 0;
+    }
+
+    .about-left .section-title br {
+        display: none;
+        /* Evita quebras de linha estranhas no celular */
+    }
+
+    .about-section {
+        padding: 100px 5%;
+    }
+}

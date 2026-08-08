@@ -1,0 +1,299 @@
+/* =========================================
+   SEÇÃO DE DETALHES DO PRODUTO
+   ========================================= */
+main{
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.product-detail-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: var(--font-body, 'Inter', -apple-system, sans-serif);
+    color: #111111;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* =========================================
+   1. GALERIA DE IMAGENS (COLUNA ESQUERDA)
+   ========================================= */
+
+.product-gallery-col {
+    display: flex;
+    gap: 16px;
+}
+
+/* Lista de Miniaturas */
+.thumbnails-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.thumb-btn {
+    width: 68px;
+    height: 68px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.thumb-btn:hover,
+.thumb-btn.active {
+    border-color: #111111;
+    box-shadow: 0 0 0 1px #111111;
+}
+
+/* Imagem Principal Destaque */
+.main-image-wrapper {
+    flex: 1;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+}
+
+.main-image-wrapper img {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+}
+
+/* =========================================
+   2. INFORMAÇÕES DO PRODUTO (COLUNA DIREITA)
+   ========================================= */
+
+.product-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cabeçalho e Título */
+.product-category {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.product-header .heading-2 {
+    color: var(--color-dark) !important;
+}
+
+/* Preço e Estoque */
+.price-stock-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 4px;
+}
+
+.product-header .product-price {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-red, #E60000);
+}
+
+.product-stock {
+    font-size: 13px;
+    font-weight: 600;
+    color: #dd6b20;
+}
+
+/* Caixa de Compra e Quantidade */
+.buy-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.qty-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #111111;
+    height: 48px;
+    border-radius: 4px;
+}
+
+.qty-btn {
+    width: 38px;
+    height: 100%;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.qty-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.qty-value {
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-add-cart {
+    flex: 1;
+    height: 48px;
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.product-description .label-text {
+    color: var(--color-dark);
+}
+
+.btn-add-cart:hover {
+    background-color: #333333;
+}
+
+.btn-add-cart:active {
+    transform: scale(0.99);
+}
+
+/* Informações de Frete e Entrega */
+.shipping-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.shipping-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #444444;
+}
+
+.shipping-item svg {
+    color: #111111;
+    flex-shrink: 0;
+}
+
+/* Descrição e Especificações */
+.product-description h2,
+.product-returns h2 {
+    color: #111111;
+}
+
+.product-description p,
+.product-returns p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #444444;
+    margin: 0 0 12px 0;
+}
+
+.specs-box {
+    background-color: #f8f9fa;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.specs-box p {
+    margin: 0;
+    font-size: 12px;
+    color: #333333;
+}
+
+/* Devoluções */
+.product-returns {
+    padding-top: 4px;
+}
+
+/* =========================================
+   3. RESPONSIVIDADE (TABLETS E CELULARES)
+   ========================================= */
+
+@media (max-width: 900px) {
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-gallery-col {
+        flex-direction: column-reverse;
+    }
+
+    .thumbnails-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .thumb-btn {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+
+    .main-image-wrapper {
+        min-height: 300px;
+        padding: 16px;
+    }
+
+    .product-title {
+        font-size: 22px;
+    }
+
+    .buy-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .qty-selector {
+        justify-content: center;
+    }
+    .btn-add-cart{
+        padding: 15px;
+    }
+}
