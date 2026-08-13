@@ -138,13 +138,13 @@
 
 /* Container de Anos Escondido por Padrão */
 .years-download-container {
+    width: 100%;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Quando expandido */
 .estaduais-card.expanded .years-download-container {
     max-height: 300px;
     opacity: 1;
@@ -164,6 +164,7 @@
 }
 
 .year-btn {
+    width: 50%;
     background-color: #e5e5e5;
     color: #000000;
     border: none;
@@ -181,7 +182,6 @@
 
 .year-btn:hover {
     background-color: #ffffff;
-    transform: scale(1.03);
 }
 
 /* =========================================
@@ -340,7 +340,6 @@
     .btn-toggle-results {
         align-self: center;
         width: 100%;
-        max-width: 200px;
     }
 
     /* Anos empilhados no mobile conforme a imagem Phone - Hover */
