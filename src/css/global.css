@@ -25,6 +25,8 @@
     --rgba-white-70: rgba(255, 255, 255, 0.7);
     --rgba-white-80: rgba(255, 255, 255, 0.8);
 
+    --rgba-black: rgba(0, 0, 0, 0.5);
+
     /* Scrollbar Vars */
     --scrollbar-dynamic-color: var(--color-brand-orange); 
     --scroll-bg-color: var(--color-white);

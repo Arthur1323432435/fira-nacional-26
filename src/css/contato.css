@@ -1,0 +1,94 @@
+/* =========================================
+   CONTAINERS DOS FORMULÁRIOS
+   ========================================= */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    background-color: var(--rgba-white-80);
+    padding: 50px;
+}
+
+.heading-1{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.body-3-sb{
+    color:  var(--color-dark-blue);
+}
+
+.contact-card {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    padding: 48px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 80%;
+}
+
+/* =========================================
+   INPUTS E BOTÕES
+   ========================================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+.form-input {
+    width: 100%;
+    background-color: var(--color-gray);
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    gap: 10px;
+}
+
+.form-input::placeholder {
+    color: var(--rgba-black);
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-dark-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-brand-blue);
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 32px 20px;
+        width: 100%;
+    }
+    .heading-1 {
+        font-size: 32px;
+    }
+    .contact-section{
+        padding: 25px;
+    }
+}
